@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <title>PROTECO</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="../img/pro.jpg">
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+    <!--link rel="stylesheet" type="text/css" href="css/animate.css"-->
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+    <script src="../js/angular.min.js" ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body ng-controller="movieCtrl as movie">
+    <header>
+      <ul id="entrar_dropdown-desktop" class="dropdown-content">
+        <li><a href="login.html">Iniciar sesión</a></li>
+      </ul>
+      <ul id="entrar_dropdown-mobile" class="dropdown-content">
+        <li><a href="login.html">Iniciar sesión</a></li>
+      </ul>
+      <nav>
+        <div class="nav-wrapper container">
+          <a href="../index.html" class="brand-logo"><img src="../img/logo.png"></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons icon-blue">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a class="proy-style" href="../index.html">Inicio</a></li>
+            <li class="active"><a class="proy-style" href="#">Cursos</a></li>
+            <li><a class="proy-style" href="convocatoria.html">Convocatoria</a></li>
+            <li><a class="dropdown-button proy-style" href="#!" data-activates="entrar_dropdown-desktop">Entrar<i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a class="proy-style" href="../index.html">Inicio</a></li>
+            <li class="active"><a class="proy-style" href="#">Cursos</a></li>
+            <li><a class="proy-style" href="convocatoria.html">Convocatoria</a></li>
+            <li><a class="dropdown-button proy-style" href="#!" data-activates="entrar_dropdown-mobile">Entrar<i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+      
+    <main>
+      <!--EFECTO PARALLAX-->
+
+  <div class="section white">
+    <div class="row container">
+
+       <div class="row"><h5 class="center text-pcolor">CURSOS INTERSEMESTRALES</h5></div>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="../img/inter2.jpg"></div>
+  </div>
+  <!--Fin efecto PARALLAX-->
+      <div class="container">
+        <div class="row">
+
+          
+
+          <div class="row"><h5 class="center text-pcolor">BUSCAR</h5></div>
+          <input  placeholder="Nombre del curso" ng-model="search">
+          <p>{{search}}</p>
+          
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Python | filter: search">
+            <div class="card large">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Python.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Python}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Python}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.PHP | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/php.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.PHP}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.PHP}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.redes | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Redes.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.redes}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.redes}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Android | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Android.png"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Android}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Android}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Arduino | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Arduino.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Arduino}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Arduino}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Bases | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Basesdedatos.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Bases}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Bases}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.C1 | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/C++.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.C1}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.C1}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.C | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/C.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.C}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.C}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.C2 | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Cs.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.C2}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.C2}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Di | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/DiseñoWeb.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Di}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Di}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Ensamblado | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Emsamblado.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Ensamblado}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Ensamblado}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Computacion | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Forense.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Computacion}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Computacion}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Fortran | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Fortran.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Fortran}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Fortran}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.IA | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/IA.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.IA}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.IA}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Introduccion | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Introduccion.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Introduccion}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Introduccion}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.ios | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/ios.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.ios}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.ios}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.ras | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Raspberry.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.ras}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.ras}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Matlab | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Matlab.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Matlab}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Matlab}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Linux | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Linux.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Linux}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Linux}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Laravel | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Laravel.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Laravel}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Laravel}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4" ng-repeat="n in movie.Java | filter: search">
+            <div class="card large" >
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator responsive-img" src="../img/Java.jpg"  width="240" height="280" alt="imagen">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><span>{{n.Java}}</span><i class="material-icons right">more_vert</i></span>
+                <p>Fecha: 22/04/2017 al 20/05/2017</p>
+                <p>Horario: 10:00:00 a 14:00:00</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><span>{{n.Java}}</span><i class="material-icons right">close</i></span>
+                <p>Información del curso :)</p>
+              </div>
+              <div class="card-action">
+                <div class="center">
+                  <a href="#">INICIAR SESIÓN</a>
+                  <a href="#">TEMARIO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PREGUNTAS -->
+      <div class="container">
+        <div class="row">
+
+          <div class="col s12 m12 l6">
+            <span>
+              <h5 class="text-pcolor">INSCRIPCIONES</h5>
+            </span>
+            <ul class="collapsible popout" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header question-style">¿Cuál es el procedimiento de inscripción para los cursos  intersemestrales?</div>
+                <div class="collapsible-body">
+                  <p>
+                    1. Registrarse en la página.<br>
+                    2. Inscribirte a los cursos que desees.<br>
+                    3. Generar el recibo de pago en PDF.<br>
+                    4. Pagar en las cajas de la Facultad de Ingeniería.<br>
+                    5. Entrega en PROTECO una única hoja con la copia de:<br>
+                    <br>
+                    - Ticket de pago.<br>
+                    - Credencial UNAM o identificación oficial.<br>
+                    - Recibo de pago en el cubículo de PROTECO.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header question-style">¿La inscripción de los cursos es en línea o presencial?</div>
+                <div class="collapsible-body">
+                  <!--p-->
+                    1. La inscripción para los cursos intersemestrales es en línea.<br>
+                    2. El pago se realiza personalmente en las cajas de la Facultad de Ingeniería, Ciudad Universitaria.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header question-style">Si quiero tomar el paquete de tres cursos ¿cómo me inscribo?</div>
+                <div class="collapsible-body">
+                  <p>
+                    1. Ingresa a la página de inscripciones.<br>
+                    2. Selecciona los tres cursos que quieras.<br>
+                    3. El sistema te genera automáticamente la cantidad a pagar por los paquetes que seleccionaste.<br>
+                    4. Inscríbete.<br>
+                    5. Genera tu recibo de pago y acude a las cajas para pagar.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <span>
+              <h5 class="text-pcolor">CURSOS</h5>
+            </span>
+            <ul class="collapsible popout" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header question-style">¿Quiénes imparten los cursos?</div>
+                <div class="collapsible-body">
+                  <p>
+                    Becarios de PROTECO que actualmente estudian en la
+                    Facultad de Ingeniería y egresados.
+                    <br><br>
+                    PROTECO se ha
+                    caracterizado por brindar un servicio de calidad
+                    llevando en alto el nombre y los valores de la
+                    Máxima Casa de Estudios.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header question-style">¿Qué obtengo al finalizar el curso?</div>
+                <div class="collapsible-body">
+                  <p>
+                    Si acreditas el curso con calificaciones mayor o igual a 8.0
+                    se te entrega una constancia de asistencia al curso, avalada
+                    por la Facultad de Ingeniería, UNAM.
+                    <br><br>
+                    Las constancias son expedidas por el M.I. Angel César
+                    Govantes y Ing. Heriberto Olguín Romo.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header question-style">¿Si deseo un reembolso por el curso al que estoy inscrito?</div>
+                <div class="collapsible-body">
+                  <p>
+                    Tienes que redactar una carta donde expreses tus motivos,
+                    escribir el monto del reembolso en la carta y traer el ticket original de pago que te dieron en las cajas de la facultad.
+                    Debes entregar estos papeles en el cubículo del PROTECO.
+                    Si no puedes asistir a uno de los cursos que te inscribiste, debes avisarnos 24 horas antes del inicio del curso
+                    inscrito para que te podamos validar el reembolso.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">  
+          <div class="col s12 m12 l6">
+            <span>
+              <h5 class="text-pcolor">PAGOS</h5>
+            </span>
+            <ul class="collapsible popout" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header question-style">¿A partir de cuándo y hasta cuando puedo pagar?</div>
+                <div class="collapsible-body">
+                  <p>
+                    A partir del momento en que generes tu recibo y tienes hasta tres días antes de que empiece el curso para pagar.
+                    <br><br>
+                    Te recomendamos que pagues lo antes posible ya que tu
+                    inscripción en linea no asegura tu lugar. Tenemos cupo limitado y
+                    los lugares se acaban. :(
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header question-style">¿Para inscribirme, puedo hacer varios pagos?</div>
+                <div class="collapsible-body">
+                  <p>
+                    1. Si te inscribes a un paquete de tres cursos, mínimo debes
+                    liquidar un curso completo para apartar tu lugar en ese curso.
+                    <br>
+                    2. Deberás liquidar el resto de la cantidad a más tardar un día
+                    antes de que comiencen los cursos faltantes.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header question-style">¿Puedo pagar mi inscripción con tarjeta de débito o crédito?</div>
+                <div class="collapsible-body">
+                  <p>
+                    Sujeto a disponibilidad.
+                    <br><br>
+                    El pago se realiza directamente en las cajas de la Facultad de Ingeniería, Ciudad Universitaria.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <span>
+              <h5 class="text-pcolor">CONTACTO</h5>
+            </span>
+            <ul class="collapsible popout" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header question-style">¿Dónde está la Facultad de Ingeniería de la UNAM?</div>
+                <div class="collapsible-body">
+                  <p>
+                    Dirección: Av Universidad 3000, Ciudad Universitaria,
+                    Coyoacán, 04510 Ciudad de México, Distrito Federal.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header question-style">¿Dónde está el área del PROTECO?</div>
+                <div class="collapsible-body">
+                  <p>
+                    El área del PROTECO se encuentra en el 2do piso del
+                    edificio "Luis G. Valdés Vallejo" ubicado en el Anexo de Ingeniería.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header question-style">¿Dónde se impartirán los cursos intersemestrales?</div>
+                <div class="collapsible-body">
+                  <p>
+                    En el Anexo de la Facultad de Ingeniería en Av Universidad 3000, Ciudad Universitaria, Coyoacán, 04510 Ciudad de México, Distrito Federal.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12 m12 l6">
+            <span>
+              <h5 class="text-pcolor">EQUIPO</h5>
+            </span>
+            <ul class="collapsible popout" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header question-style">¿Y si no puedo llevar mi computadora?</div>
+                <div class="collapsible-body">
+                  <p>
+                    1. No te preocupes. ;)<br>
+                    2. En el PROTECO contamos con salas equipadas con el equipo de cómputo necesario para impartir los cursos.<br>
+                    3. Inscríbete. :)<br><br>
+                    Si es necesario traerla, se te avisará con tiempo.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <span>
+              <h5 class="text-pcolor">FECHAS</h5>
+            </span>
+            <ul class="collapsible popout" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header question-style">¿Cuándo son los cursos?</div>
+                <div class="collapsible-body">
+                  <p>
+                    Los cursos se celebran en el periodo intersemestral de la UNAM.
+                    Próximamente abriremos cursos semestrales y sabatinos.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="page-footer grey lighten-3">
+          <div class="container">
+            <div class="row">
+              <div class="col 10 s6">
+                <h5 class="text-pcolor">¿QUIÉNES SOMOS?</h5>
+                <p class="black-text text-lighten-4 tam-foot">El Programa de Tecnología en Cómputo busca establecer un proceso permanente, con herramientas de cómputo, para la formación de personal docente y de investigación, en las diferentes áreas de las Divisiones de la Facultad de Ingeniería, mediante la participación de los integrantes en cursos especializados y en el desarrollo de proyectos.</p>
+              </div>
+              <div class="col 10 s6">
+                <h5 class="text-pcolor">CONTACTO</h5>
+                <p class="black-text text-lighten-4 tam-foot"><font class="text-pcolor">Ubicación:</font> Edificio Q "Luis G. Valdés Vallejo", 2do piso PROTECO, Anexo de Ingeniería, Ciudad Universitaria, Ciudad de México.</p>
+                <p class="black-text text-lighten-4 tam-foot"><font class="text-pcolor">Teléfono:</font> 56-22-30-45 y 56-22-38-99 ext. 44174.</p>
+                <p class="black-text text-lighten-4 tam-foot"><font class="text-pcolor">Correo electrónico:</font> cursosproteco@gmail.com</p>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col l12 s12">
+                  <p class="black-text text-lighten-4 tam-aviso"><b>Aviso de privacidad:</b> El Programa de Tecnología en Cómputo, con domicilio en Edificio Q "Luis G. Valdés Vallejo", 2do piso, Anexo de Ingeniería, Ciudad Universitaria utilizará sus datos personales aquí recabados únicamente para identificarlo y enviarle información de su interés. Para mayor información acerca del tratamiento de datos usted puede visitar nuestras oficinas en la dirección previamente mencionada.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container black-text">
+              <a class="black-text text-lighten-4 center proy-style" href="#!">© 2017 Programa de Tecnología en Cómputo. Universidad Nacional Autónoma de México. Facultad de Ingeniería. Todos los derechos reservados.</a>
+            </div>
+          </div>
+        </footer>
+  </body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+  <script src="../js/app.min.js"></script>
+</html>
